@@ -3,6 +3,7 @@ var Appointments = React.createClass({
     return {
       appointments: this.props.appointments,
       title: '',
+      location: '',
       appt_time: ''
     }
   },
@@ -12,7 +13,7 @@ var Appointments = React.createClass({
   },
 
   handleFormSubmit: function() {
-    var appointment = {title: this.state.title, appt_time: this.state.appt_time};
+    var appointment = {title: this.state.title, location: this.state.location, appt_time: this.state.appt_time};
     $.post('/appointments',
             {appointment: appointment})
           .done(function(data) {
@@ -33,7 +34,7 @@ var Appointments = React.createClass({
     return(
       <div>
         <AppointmentForm title={this.state.title}
-        appt_time={this.state.appt_time}
+        appt_time={this.state.appt_time} location={this.state.location}
         onUserInput={this.handleUserInput}
         onFormSubmit={this.handleFormSubmit} />
         <AppointmentsList appointments={this.state.appointments} />
