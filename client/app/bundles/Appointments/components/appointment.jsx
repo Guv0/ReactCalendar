@@ -1,4 +1,7 @@
-const Appointment = ({appointment}) =>
+import React from 'react';
+import { formatDate } from '../utils/format';
+
+export const Appointment = ({appointment}) =>
       <div className="appointment">
         <h4>{appointment.title}</h4>
         <h5><em>Location: {appointment.location}</em></h5>
