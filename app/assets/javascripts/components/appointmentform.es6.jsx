@@ -12,13 +12,6 @@ class AppointmentForm extends React.Component {
     this.props.onFormSubmit();
   }
 
-  // setLocation: function(e) {
-  //   const name = e.target.name;
-  //   obj = {};
-  //   obj[name] = e.target.value;
-  //   this.props.onUserInput(obj);
-  // },
-
   setApptTime (e) {
     const name = 'appt_time';
     const obj = {};
