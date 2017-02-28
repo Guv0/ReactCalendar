@@ -1,53 +1,53 @@
-var AppointmentForm = React.createClass({
+class AppointmentForm extends React.Component {
 
-  handleChange: function(e) {
-    var name = e.target.name;
+  handleChange (e) {
+    const name = e.target.name;
     obj = {};
     obj[name] = e.target.value;
     this.props.onUserInput(obj);
-  },
+  }
 
-  handleSubmit: function(e) {
+  handleSubmit (e) {
     e.preventDefault();
     this.props.onFormSubmit();
-  },
+  }
 
   // setLocation: function(e) {
-  //   var name = e.target.name;
+  //   const name = e.target.name;
   //   obj = {};
   //   obj[name] = e.target.value;
   //   this.props.onUserInput(obj);
   // },
 
-  setApptTime: function(e) {
-    var name = 'appt_time';
-    var obj = {};
+  setApptTime (e) {
+    const name = 'appt_time';
+    const obj = {};
     if (obj[name] = e.toDate()) {
       this.props.onUserInput(obj);
     }
-  },
+  }
 
-  render: function() {
-    var inputProps = {
+  render () {
+    const inputProps = {
       name: 'appt_time'
     };
 
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit.bind(this)}>
           <Label label='Enter Title, Location, Date and Time' />
           <input name='title' placeholder='Appointment Title'
             value={this.props.title}
-            onChange={this.handleChange} className="form-input" />
+            onChange={this.handleChange.bind(this)} className="form-input" />
           <input name='location' placeholder='Where?'
             value={this.props.location}
-            onChange={this.handleChange} className="form-input" />
+            onChange={this.handleChange.bind(this)} className="form-input" />
           <Datetime input={false} open={true}
             inputProps={inputProps} value={this.props.appt_time}
-            onChange={this.setApptTime} />
+            onChange={this.setApptTime.bind(this)} />
           <input type='submit' value='Make Appointment' className="submit-btn" />
         </form>
       </div>
     );
   }
-});
+}
