@@ -1,6 +1,6 @@
 React Calendar for logging appointments.
 
-Built in rails using the 'react-rails' gem.
+Built in rails using the 'react_on_rails' gem.
 
 Live demo can be found at:
-https://github.com/Guv0/ReactCalendar
+https://reactcalender.herokuapp.com/
